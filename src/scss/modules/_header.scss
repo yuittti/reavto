@@ -1,0 +1,119 @@
+header {
+
+  .container {
+    height: 100px;
+    @extend .flex;
+
+    .left-head {
+      width: 250px;
+      height: inherit;
+      @extend .flex;
+      
+      .slogan {
+        padding-left: 20px;
+        font-family: $RobotoLight;
+        font-size: 13px;
+        color: $txtCol;
+        line-height: 20px;
+      }
+    }
+
+    .main-nav {
+      height: inherit;
+      padding-left: 2.5%;
+      padding-right: 2.5%;
+      flex: 1;
+
+      .main-menu {
+        @extend .flex;
+        height: inherit;
+        padding: 0;
+        margin: 0;
+
+        .menu-item {
+          list-style: none;
+          
+          a {
+            display: inline-block;
+            box-sizing: border-box;
+            font-family: $RobotoMedium;
+            font-size: 13px;
+            color: $txtCol;
+            padding: 15px 10px;
+            line-height: 1em;
+            position: relative;
+            transition: 0.1s linear;
+
+            &:after {
+              position: absolute;
+              left: 10px;
+              right: 10px;
+              bottom: 10px;
+              content: '';
+              display: block;
+              height: 1px;
+              background: #cccccc;
+            }
+            
+            &:hover {
+              background: #911616;
+              color: white;
+              transition: 0.2s linear all;
+            }
+
+            &:hover:after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+
+
+    .right-head {
+      width: 165px;
+      text-align: right;
+
+      .phone {
+        font-family: $RobotoReg;
+        font-size: 15px;
+        color: $txtCol;
+        position: relative;
+        padding-left: 20px;
+
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 10px;
+          height: 20px;
+          background: url(../images/icon-phone.png) center center no-repeat;
+        }
+
+      }
+
+      .email {
+        font-family: $RobotoLight;
+        font-size: 13px;
+        color: #999999;
+        position: relative;
+        padding-left: 23px;
+        padding-right: 4px;
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 10px;
+          height: 20px;
+          background: url(../images/icon-mail.png) center center no-repeat;
+        }
+      }
+    }
+  }
+
+}

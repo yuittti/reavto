@@ -1,0 +1,58 @@
+body, html {
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  text-rendering: auto;
+  font-smooth: always;
+
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  height: 100%
+}
+
+body {
+  overflow-x: hidden // Фикс горизонтальной прокрутки на macOS
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	margin: 0; 
+}
+
+a {
+	text-decoration: none; 
+  outline: none; 
+}
+
+figure, figcaption {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  &.-nav-fixed {
+    padding-top: 72px;
+
+  }
+}
+
+.flex {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+

@@ -1,0 +1,22 @@
+.dropDown {
+	&-link {
+
+	}
+
+	&-content {
+		display: block;
+	    max-height: 0;
+	    position: absolute;
+	    z-index: 100;
+	    overflow: hidden;
+	    opacity: 0;
+	    transition: max-height .5s linear, opacity .3s ease-in;
+	}
+
+	&.-open {
+		.dropDown-content {
+			max-height: 1000px;
+			opacity: 1;
+		}
+	}
+}

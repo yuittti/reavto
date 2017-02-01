@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&subset=cyrillic,cyrillic-ext');
+$ubuntu: 'Ubuntu';
+body {
+	font-family: $ubuntu;
+}
+
+$pageWidth: 1280px;
+$pageMd: 970px;
+$pageSm: 750px;
+$gutter: 30px;
+
+// Fonts
+
+$font1-regular: "FiraSans-Regular"; // Пример
+
+
+// Цвета
+$color-text-red: #e51d0b; // Пример
+
+// Misc
+$time: 0.3s; // Таймер для transition
+
+@import "base/mixins";
+@import "libs/_normalize";
+@import "libs/base";
+
+// @import ../../lib/sass/main
+
+// Компоненты
+@import "vendor/fontawesome/font-awesome";
+@import "components/fonts";
+@import "components/typography";
+@import "components/layout";
+@import "components/buttons";
+@import "components/navigation";
+@import "components/tabs";
+@import "components/modal";
+@import "components/dropdown";
+
+// Страницы
+@import "components/header";
+@import "components/page";
+// @import "components/inner";
+@import "components/footer";
