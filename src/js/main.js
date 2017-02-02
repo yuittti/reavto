@@ -51,22 +51,71 @@
 		// },
 			menu: '#navigationBar',
 			afterLoad: function(anchorLink, index) {
+
 				if(anchorLink !== 'frame1'){
 					$('.navigationBar').removeClass('-hidden');
 				}
 				else {
 					$('.navigationBar').addClass('-hidden');
 				}
-		}
+				console.log($(this).find('._to_animate'));
+				//$(this).find('._to_animate').addClass('animated fadeInLeft');
+			}
 		});
 
 		$.fn.fullpage.setAllowScrolling(true);
 
-		$('ul.tabs-caption').on('click', 'li:not(.active) > a', function(ev) {
+
+
+		$(window).load(function() {
+
+			//$('.twentytwenty-container').eq(0).twentytwenty().addClass('-loaded');
+			$('.twentytwenty-container').twentytwenty();
+
+		});
+
+		$('ul.tabs-caption').on('click', 'li > a', function(ev) {
 			ev.preventDefault();
+
+			if ($(this).hasClass('-active')) {
+				return false;
+			}
+
 			$(this)
-			  .closest('li').addClass('active').siblings().removeClass('active')
-			  .closest('div.tabs').find('div.tabs-content').removeClass('active').eq($(this).closest('li').index()).addClass('active');
+				.closest('li').addClass('active').siblings().removeClass('active')
+				.closest('div.tabs').find('div.tabs-content').removeClass('active').eq($(this).closest('li').index()).addClass('active');
+
+		});
+
+
+		$('.advantages-btns').on('click', '.advantages-btn', function(ev) {
+			ev.preventDefault();
+
+			var ind = $(this).index();
+			var self = $(this);
+
+			if ($(this).hasClass('-active')) {
+				return false;
+			}
+
+			$('.advantages-btns').removeClass().addClass('advantages-btns').addClass('rotate-' + ind);
+
+			$(this)
+				.siblings().removeClass('-active')
+				.closest('.advantages-list').find('.advantages-tab').removeClass('-active').eq($(this).index()).addClass('-active');
+
+			setTimeout(function(){
+				self.addClass('-active');
+			}, 150);
+
+
+
+			console.log(ind);
+
+
+
+
+
 		});
 	});
 

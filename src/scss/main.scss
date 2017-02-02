@@ -23,6 +23,9 @@ $time: 0.3s; // Таймер для transition
 @import "base/mixins";
 @import "libs/_normalize";
 @import "libs/base";
+@import "libs/animate";
+
+@import 'components/animation';
 
 // @import ../../lib/sass/main
 

@@ -16,6 +16,8 @@
 	// border-image: url(../images/border.jpg);
 	position: relative;
 
+
+
 	&:before {
 		content: '';
 	    display: block;
@@ -25,6 +27,8 @@
 	    position: absolute;
 	    left: -3px;
 	    top: -2px;
+	  	transition: 0.2s linear width;
+	  	transition-delay: .2s;
 	}
 	&:after {
 		content: '';
@@ -35,19 +39,77 @@
 	    position: absolute;
 	    right: -3px;
 	    bottom: -2px;
+	  	transition: 0.2s linear width;
+	  	transition-delay: .2s;
+	}
+
+
+
+  	&-inner {
+		display: flex;
+		align-items: center;
+		height: inherit;
+	  	position: relative;
+
+	  	&:before {
+			content: '';
+			display: block;
+			width: 5%;
+			height: 3px;
+			background: #4aa7ef;
+			position: absolute;
+			right: -7px;
+			top: -1px;
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			width: 5%;
+			height: 3px;
+			background: #4aa7ef;
+			position: absolute;
+			left: -7px;
+			bottom: -1px;
+		}
 	}
 
 
 	&-lg {
 		// width: 360px;
 		height: 65px;
-		padding: 0 30px;
 		color: white;
 		letter-spacing: 1px;
+	  	transition: .1s linear background-color;
+
+	  	& .btn-inner {
+		  	padding: 0 30px;
+
+			&:before {
+				right: -3px;
+				top: -1px;
+			}
+
+			&:after {
+				left: -3px;
+				bottom: -1px;
+			}
+		}
 
 		&:hover {
-			// border-bottom: 5px solid #a48f04;
-			transition: 0.25s linear;
+
+			background: #4aa7ef;
+			transition: .1s linear background-color;
+			transition-delay: .5s;
+
+			&:before {
+				width: 100%;
+				transition: 0.3s linear width;
+			}
+			&:after {
+				width: 100%;
+				transition: 0.3s linear width;
+			}
 		}
 
 		@include media(767) {

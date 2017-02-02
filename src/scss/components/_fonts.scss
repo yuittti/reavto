@@ -54,6 +54,14 @@ $supermolot-bi: 'supermolot-bi';
 }
 $supermolot-l: 'supermolot-l';
 
+@font-face {
+    font-family: 'supermolot-i';
+    src: url('../fonts/supermolot/TT Supermolot Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+$supermolot-i: 'supermolot-i';
+
 
 @font-face {
   font-family: 'Roboto-Medium';
