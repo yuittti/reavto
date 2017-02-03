@@ -40,15 +40,6 @@
 
 	$(document).ready(function(){
 		$('#fullpage').fullpage({
-		// menu: '#navigationBar',
-		// afterLoad: function(anchorLink, index) {
-		// 	if(anchorLink !== 'frame1'){
-		// 		$('.navigationBar').removeClass('-hidden');
-		// 	}
-		// 	else {
-		// 		$('.navigationBar').addClass('-hidden');
-		// 	}
-		// },
 			menu: '#navigationBar',
 			afterLoad: function(anchorLink, index) {
 
@@ -63,7 +54,36 @@
 			}
 		});
 
-		$.fn.fullpage.setAllowScrolling(true);
+		// $.fn.fullpage.setAllowScrolling(true);
+
+		$(function() {
+			window.mobileDetection = {
+				Android: function () {
+					return navigator.userAgent.match(/Android/i);
+				},
+				BlackBerry: function () {
+					return navigator.userAgent.match(/BlackBerry/i);
+				},
+				iOS: function () {
+					return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+				},
+				Opera: function () {
+					return navigator.userAgent.match(/Opera Mini/i);
+				},
+				Windows: function () {
+					return navigator.userAgent.match(/IEMobile/i);
+				},
+				any: function () {
+					return this.Android() || this.BlackBerry() || this.iOS() || this.Opera() || this.Windows();
+				}
+			};
+
+			if ((window.mobileDetection.any())) {
+				$.fn.fullpage.setResponsive(true);
+				$.fn.fullpage.destroy('all');
+
+			}
+		});
 
 
 
@@ -108,14 +128,7 @@
 				self.addClass('-active');
 			}, 150);
 
-
-
 			console.log(ind);
-
-
-
-
-
 		});
 	});
 
@@ -244,25 +257,6 @@
 		});
 	};
 
-	var isMobile = {
-        Android: function() {
-            return navigator.userAgent.match(/Android/i);
-        },
-        BlackBerry: function() {
-            return navigator.userAgent.match(/BlackBerry/i);
-        },
-        iOS: function() {
-            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-        },
-        Opera: function() {
-            return navigator.userAgent.match(/Opera Mini/i);
-        },
-        Windows: function() {
-            return navigator.userAgent.match(/IEMobile/i);
-        },
-        any: function() {
-            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-        }
-    };
+	
 
 })(jQuery);

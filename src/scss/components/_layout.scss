@@ -31,6 +31,10 @@
     position: relative;
     height: 100vh;
     background: #fff;
+
+    @include media(1149) {
+    	height: auto;
+    }
 }
 
 .container {

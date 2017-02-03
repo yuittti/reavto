@@ -2,6 +2,10 @@
   position: relative;
   background: url(../images/frame-bg.jpg) center top no-repeat;
 
+  @include media(1149) {
+  	background-size: cover;
+  }
+
   &:before {
     display: block;
     content: '';
@@ -59,6 +63,22 @@
 
   &_1 {
     background: url(../images/frame1bg1.jpg) center top no-repeat;
+    
+    @include hmedia(550) {
+    	// background-size: cover;
+    }
+
+    @include media(1150) {
+	    background: url(../images/frame1bg1.jpg) left 25% top 15% no-repeat;
+	    background-size: cover;
+    }
+    @include media(1100) {
+	    // background: url(../images/frame1bg1.jpg) left 25% top 15% no-repeat;
+    }
+    @include media(900) {
+	    background: url(../images/frame1bg1.jpg) left 35% top 15% no-repeat;
+    }
+
     &:before {
       display: none;
     }
@@ -71,6 +91,24 @@
       height: auto;
       justify-content: center;
       margin-top: -71px;
+
+      @include hmedia(700) {
+      	margin-top: -50px;
+      }
+      @include hmedia(610) {
+				margin-top: 0;
+	 		}
+
+	 		@include media(1149) {
+	 			margin-top: 20px;
+	 		}
+
+	 		.block-1_2 {
+	 			@include media(1100) {
+	 				// width: 70%;
+	 			}
+		    
+			}
     }
 
     .header {
@@ -81,10 +119,25 @@
 
     .txt-block {
       margin-top: -10%;
+
+      @include hmedia(900) {
+      	margin-top: 0;
+      }
+      @include media(1149) {
+      	margin-top: 0;
+      }
+
+
     }
 
     .short-about {
       margin-right: 195px;
+
+      .btn {
+      	@include media(1149) {
+      		display: none;
+      	}
+      }
     }
 
 
@@ -843,6 +896,11 @@
     list-style: none;
     display: flex;
     align-items: flex-end;
+
+	@include hmedia(700) {
+		margin-bottom: 40px;
+	}
+	
 
     li {
       margin-right: 35px;

@@ -6,6 +6,17 @@
     font-weight: bold;
     letter-spacing: 2px;
     margin-bottom: 25px;
+
+    @include hmedia(700) {
+	    font-size: 42px;
+    	line-height: 42px;
+    }
+
+    @include media(1024) {
+	    font-size: 32px;
+	    line-height: 32px;
+	    padding-right: 25%;
+    }
 }
 
 .txt {
@@ -15,6 +26,9 @@
 	line-height: 22px;
 	color: white;
 	margin: 0 0 20px 0;
+	 @include hmedia(700) {
+	    margin: 0 0 10px 0;
+    }
 }
 
 .heading {
